@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HabitFlow"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800"
+        Title="Login" Height="600" Width="800"
          Style="{StaticResource MaterialDesignWindow}"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -52,8 +53,8 @@
                  Style="{StaticResource MaterialDesignOutlinedLightButton}"
 
   />
-            <Button FontSize="10" Content="Нет аккаунта? Зарегистрироваться" Style="{StaticResource MaterialDesignFlatButton}"></Button>
-            <Button Command="{Binding ClearButton}" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
+            <Button Command="{Binding NavButton}" FontSize="10" Content="Нет аккаунта? Зарегистрироваться" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+            <Button Foreground="red" Command="{Binding ClearButton}" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
         </StackPanel>
     </Grid>
 </Window>

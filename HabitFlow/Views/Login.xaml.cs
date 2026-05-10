@@ -23,7 +23,7 @@ namespace HabitFlow.Views
         public Login()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+            DataContext = new LoginViewModel(this);
         }
     }
 }

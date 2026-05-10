@@ -1,10 +1,12 @@
-﻿using System;
+﻿using HabitFlow.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HabitFlow.ViewModels
@@ -54,10 +56,14 @@ namespace HabitFlow.ViewModels
             }
         }
 
+        private Window _window;
         public ICommand ClearCommand { get; }
-        public RegistrationViewModel ()
+        public ICommand NavButton { get; }
+        public RegistrationViewModel (Window window)
         {
+            _window = window;
             ClearCommand = new RelayCommand(Clear);
+            NavButton = new RelayCommand(Navigation) ;
         }
         private void Clear()
         {
@@ -66,5 +72,13 @@ namespace HabitFlow.ViewModels
             Password = "";
             ConfirmPassword = "";
         }
+        private void Navigation()
+        {
+            var Login = new Login();
+            _window.Close();
+            Login.Show();
+
+        }
+
     }
 }

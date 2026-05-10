@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Registration" Height="600" Width="800"
          Style="{StaticResource MaterialDesignWindow}"
-xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -72,7 +73,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
                 Style="{StaticResource MaterialDesignOutlinedLightButton}"
 
  />
-            <Button FontSize="10" Content="Есть аккаунт? Войти" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+            <Button Command="{Binding NavButton}" FontSize="10" Content="Есть аккаунт? Войти" Style="{StaticResource MaterialDesignFlatButton}"></Button>
             <Button x:Name="ClearButton" Command="{Binding ClearCommand}" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
         </StackPanel>
         
