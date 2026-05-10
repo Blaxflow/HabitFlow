@@ -5,15 +5,17 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HabitFlow.ViewModels
 {
-    public class RegistrationViewModel : INotifyPropertyChanged
+    public class RegistrationViewModel : BaseViewModel
     {
         private string _name;
         private string _email;
         private string _password;
         private string _confirmPassword;
+
 
         public string Name
         {
@@ -52,11 +54,17 @@ namespace HabitFlow.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        public ICommand ClearCommand { get; }
+        public RegistrationViewModel ()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            ClearCommand = new RelayCommand(Clear);
+        }
+        private void Clear()
+        {
+            Name = "";
+            Email = "";
+            Password = "";
+            ConfirmPassword = "";
         }
     }
 }

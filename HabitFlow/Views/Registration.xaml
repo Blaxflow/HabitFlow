@@ -73,7 +73,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
  />
             <Button FontSize="10" Content="Есть аккаунт? Войти" Style="{StaticResource MaterialDesignFlatButton}"></Button>
-            <Button x:Name="ClearButton" Click="ClearButton_Click" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
+            <Button x:Name="ClearButton" Command="{Binding ClearCommand}" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
         </StackPanel>
         
     </Grid>

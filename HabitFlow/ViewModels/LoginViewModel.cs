@@ -5,10 +5,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HabitFlow.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : BaseViewModel
     {
         private string _username;
         private string _password;
@@ -30,11 +31,17 @@ namespace HabitFlow.ViewModels
                 OnPropertyChanged();
             }
         }
-        
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+
+        public ICommand ClearButton { get; }
+        public LoginViewModel()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            ClearButton = new RelayCommand(Clear);
         }
+        private void Clear()
+        {
+            Username = "";
+            Password = "";
+        }
+        
     }
 }

@@ -53,6 +53,7 @@
 
   />
             <Button FontSize="10" Content="Нет аккаунта? Зарегистрироваться" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+            <Button Command="{Binding ClearButton}" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
         </StackPanel>
     </Grid>
 </Window>

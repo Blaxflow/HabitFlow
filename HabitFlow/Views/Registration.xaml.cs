@@ -26,14 +26,6 @@ namespace HabitFlow.Views
             DataContext = new RegistrationViewModel();
         }
 
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
-        {
-            var vm = DataContext as RegistrationViewModel;
-            vm.Name = "";
-            vm.Password = "";
-            vm.Email = "";
-            vm.ConfirmPassword = "";
-                
-        }
+       
     }
 }
