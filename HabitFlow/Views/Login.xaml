@@ -11,11 +11,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <!-- левый отступ -->
             <ColumnDefinition Width="1.5*"/>
-            <!-- центр - форма -->
             <ColumnDefinition Width="*"/>
-            <!-- правый отступ -->
         </Grid.ColumnDefinitions>
         <StackPanel MaxWidth="500" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" >
 
@@ -28,6 +25,7 @@
             Text="Авторизация"/>
 
             <TextBox
+                Text="{Binding Username}"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 materialDesign:TextFieldAssist.HasLeadingIcon="True"
                 materialDesign:TextFieldAssist.LeadingIcon="User"
@@ -37,6 +35,7 @@
  >
             </TextBox>
             <PasswordBox
+                materialDesign:PasswordBoxAssist.Password="{Binding Password}"
                 materialDesign:TextFieldAssist.LeadingIcon="Password"
                 materialDesign:TextFieldAssist.HasLeadingIcon="True"
                 Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"

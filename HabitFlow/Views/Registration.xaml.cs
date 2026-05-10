@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HabitFlow.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,17 @@ namespace HabitFlow.Views
         public Registration()
         {
             InitializeComponent();
+            DataContext = new RegistrationViewModel();
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as RegistrationViewModel;
+            vm.Name = "";
+            vm.Password = "";
+            vm.Email = "";
+            vm.ConfirmPassword = "";
+                
         }
     }
 }

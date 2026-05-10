@@ -25,6 +25,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
             <TextBox
            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Text="{Binding Name}"
                materialDesign:TextFieldAssist.HasLeadingIcon="True"
                materialDesign:TextFieldAssist.LeadingIcon="User"
                materialDesign:HintAssist.HelperText="Неверный формат имени (минимум 8 символов)"
@@ -34,6 +35,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
             </TextBox>
             <TextBox
            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Text="{Binding Email}"
                 Margin="0, 18, 0, 0"
                materialDesign:TextFieldAssist.HasLeadingIcon="True"
                materialDesign:TextFieldAssist.LeadingIcon="Email"
@@ -43,6 +45,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 >
             </TextBox>
             <PasswordBox
+               materialDesign:PasswordBoxAssist.Password="{Binding Password}"
                materialDesign:TextFieldAssist.LeadingIcon="Password"
                materialDesign:TextFieldAssist.HasLeadingIcon="True"
                Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
@@ -51,6 +54,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
                materialDesign:HintAssist.Hint="Пароль"
                ></PasswordBox>
             <PasswordBox
+                materialDesign:PasswordBoxAssist.Password="{Binding ConfirmPassword}"
                materialDesign:TextFieldAssist.LeadingIcon="Password"
                materialDesign:TextFieldAssist.HasLeadingIcon="True"
                Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
@@ -69,6 +73,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
  />
             <Button FontSize="10" Content="Есть аккаунт? Войти" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+            <Button x:Name="ClearButton" Click="ClearButton_Click" Style="{StaticResource MaterialDesignFlatButton}">Очистить</Button>
         </StackPanel>
         
     </Grid>
